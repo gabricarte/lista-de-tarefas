@@ -5,12 +5,11 @@ export const verificarArrayVazio = (tarefas) =>{
 };
 
 export const verificarExistenciaTarefa = (idTarefa, tarefas) =>{
-    let existe; 
-    tarefas.forEach(tarefa => tarefa.idTarefa === idTarefa ? existe = true : '' );
+    let existe = tarefas.some(tarefa => tarefa.idTarefa === idTarefa);
     if(!existe) { 
         throw new Error("A tarefa com o id digitado não existe no array!"); 
     };
-}
+};
 
 export const verificarCampos = (nome, descricao) => {
     if (!nome || !descricao) {
